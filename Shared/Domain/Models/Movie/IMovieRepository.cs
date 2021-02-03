@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace NetCoreHostedBlazorNetflixClone.Shared.Domain.Models
+namespace NetCoreHostedBlazorNetflixClone.Shared.Domain.Models.Movie
 {
     public interface IMovieRepository
     {

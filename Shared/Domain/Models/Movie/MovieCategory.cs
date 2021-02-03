@@ -1,4 +1,4 @@
-﻿namespace NetCoreHostedBlazorNetflixClone.Shared.Domain.Models
+﻿namespace NetCoreHostedBlazorNetflixClone.Shared.Domain.Models.Movie
 {
     public enum MovieCategory
     {

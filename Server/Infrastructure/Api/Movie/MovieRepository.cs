@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using NetCoreHostedBlazorNetflixClone.Server.Options;
-using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models;
+using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models.Movie;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;

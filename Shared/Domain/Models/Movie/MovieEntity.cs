@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace NetCoreHostedBlazorNetflixClone.Shared.Domain.Models
+namespace NetCoreHostedBlazorNetflixClone.Shared.Domain.Models.Movie
 {
     public class MovieEntity
     {

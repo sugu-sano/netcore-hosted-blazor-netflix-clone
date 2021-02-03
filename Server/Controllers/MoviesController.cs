@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models;
+using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models.Movie;
 using System;
 using System.Threading.Tasks;
 
@@ -30,7 +30,7 @@ namespace NetCoreHostedBlazorNetflixClone.Server.Controllers
                 return this.StatusCode(StatusCodes.Status404NotFound);
             }
 
-            MovieEntity[] movies = await this.movieRepository.ListAsync(category ?? MovieCategory.Trending);
+            MovieEntity[] movies = await this.movieRepository.ListAsync(category.Value);
 
             return movies;
         }

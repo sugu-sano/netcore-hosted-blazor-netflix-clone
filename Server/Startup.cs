@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NetCoreHostedBlazorNetflixClone.Server.Infrastructure.Api.Movie;
 using NetCoreHostedBlazorNetflixClone.Server.Options;
-using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models;
+using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models.Movie;
 
 namespace NetCoreHostedBlazorNetflixClone.Server
 {
@@ -39,7 +39,7 @@ namespace NetCoreHostedBlazorNetflixClone.Server
             {
                 // TODO
             }
-            
+
             services.AddHttpClient<IMovieRepository, MovieRepository>();
             services.AddControllersWithViews();
             services.AddRazorPages();
