@@ -22,8 +22,7 @@
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "TMDB_APIKEY_V3": "6e2bdd7b0a3fad5c7b6d6f1b822f8cb9"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
   }

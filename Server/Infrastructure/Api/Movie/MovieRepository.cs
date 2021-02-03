@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Microsoft.Extensions.Options;
+using NetCoreHostedBlazorNetflixClone.Server.Options;
+using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Web;
-using Microsoft.Extensions.Options;
-using NetCoreHostedBlazorNetflixClone.Server.Options;
-using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models;
 
 namespace NetCoreHostedBlazorNetflixClone.Server.Infrastructure.Api.Movie
 {

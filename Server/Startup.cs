@@ -3,30 +3,43 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using NetCoreHostedBlazorNetflixClone.Server.Options;
-using System;
-using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models;
 using NetCoreHostedBlazorNetflixClone.Server.Infrastructure.Api.Movie;
+using NetCoreHostedBlazorNetflixClone.Server.Options;
+using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models;
 
 namespace NetCoreHostedBlazorNetflixClone.Server
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
-            Configuration = configuration;
+            this.Configuration = configuration;
+            this.Environment = environment;
         }
 
         public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Environment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<TmdbOptions>(options =>
+            if (this.Environment.IsDevelopment())
             {
-                options.ApiKeyV3 = Environment.GetEnvironmentVariable("TMDB_APIKEY_V3");
-            });
+                services.Configure<TmdbOptions>(options =>
+                {
+                    options.ApiKeyV3 = this.Configuration["Tmdb:ApiKeyV3"];
+                });
+            }
+            else if (this.Environment.IsStaging())
+            {
+                // TODO
+            }
+            else if (this.Environment.IsProduction())
+            {
+                // TODO
+            }
+            
             services.AddHttpClient<IMovieRepository, MovieRepository>();
             services.AddControllersWithViews();
             services.AddRazorPages();

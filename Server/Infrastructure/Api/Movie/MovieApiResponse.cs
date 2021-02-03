@@ -1,5 +1,5 @@
-﻿using System.Text.Json.Serialization;
-using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models;
+﻿using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models;
+using System.Text.Json.Serialization;
 
 namespace NetCoreHostedBlazorNetflixClone.Server.Infrastructure.Api.Movie
 {
