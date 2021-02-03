@@ -4,6 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>9.0</LangVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.2" />
   </ItemGroup>
@@ -14,4 +21,10 @@
   </ItemGroup>
 
 
+  <ItemGroup>
+    <Folder Include="Options\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Infrastructure\Api\" />
+    <Folder Include="Infrastructure\Api\Movie\" />
+  </ItemGroup>
 </Project>
