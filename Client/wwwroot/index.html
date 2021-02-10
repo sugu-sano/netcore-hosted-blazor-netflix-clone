@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>NetCoreHostedBlazorNetflixClone</title>
     <base href="/" />
-    <link href="NetCoreHostedBlazorNetflixClone.Client.styles.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" async />
+    <link href="NetCoreHostedBlazorNetflixClone.Client.styles.css" rel="stylesheet" async />
     <link href="manifest.json" rel="manifest" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
 </head>
@@ -14,7 +15,7 @@
 <body>
     <div id="app">Loading...</div>
     <script src="_framework/blazor.webassembly.js"></script>
-    <script src="js-interip/shared-nav.js"></script>
+    <script src="js-interop/shared-nav.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>
 

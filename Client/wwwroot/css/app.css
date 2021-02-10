@@ -1,1 +1,7 @@
-﻿
+﻿* {
+    margin: 0;
+}
+
+.App {
+    background-color: #111;
+}
