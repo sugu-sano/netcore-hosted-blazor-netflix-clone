@@ -22,5 +22,7 @@ namespace NetCoreHostedBlazorNetflixClone.Shared.Domain.Models.Movie
         [JsonPropertyName("backdrop_path")]
         public string BackdropPath { get; set; }
 
+        [JsonPropertyName("overview")]
+        public string Overview { get; set; }
     }
 }

@@ -1,0 +1,54 @@
+﻿@using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models.Movie
+@inject HttpClient Http
+
+@if (movie is null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <header class="Banner"
+            style='background-size:cover; background-image: url(@(this.movie.BackdropPath)); background-position: center center;'>
+        <div class="Banner-contents">
+            <h1 class="banner-title">
+                @(this.BannerTitle)
+            </h1>
+            <div class="Banner-buttons">
+                <button class="Banner-button">Play</button>
+                <button class="Banner-button">My List</button>
+            </div>
+
+            <h1 class="Banner-description">@(this.Description)</h1>
+        </div>
+
+        <div class="Banner-fadeBottom" />
+    </header>
+}
+
+@code {
+    MovieEntity movie;
+
+    string BannerTitle => this.movie?.Title ?? movie?.Name ?? movie?.OriginalName ?? string.Empty;
+
+    string Description => Truncate(movie?.Overview ?? "", 150);
+
+    protected override async Task OnInitializedAsync()
+    {
+        var movies = await this.Http.GetFromJsonAsync<MovieEntity[]>($"api/movies/{MovieCategory.NetflixOriginals}");
+        var random = new Random();
+        int index = random.Next(0, movies.Length);
+        this.movie = movies[index];
+    }
+
+    static string Truncate(string description, int maxLength)
+    {
+        if (string.IsNullOrEmpty(description))
+        {
+            return string.Empty;
+        }
+
+        string truncated = description.Length > maxLength ? $"{description.Substring(0, maxLength - 1) }..." : description;
+
+        return truncated;
+    }
+}

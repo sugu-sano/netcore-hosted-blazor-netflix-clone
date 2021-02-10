@@ -1,0 +1,42 @@
+﻿@using System.Net.Http
+@using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models.Movie
+@inject HttpClient Http
+
+<div class="Row">
+    <h2>@(this.Title)</h2>
+    <div class="Row-posters">
+        @if (this.movies?.Any() ?? false)
+        {
+            foreach (MovieEntity movie in this.movies)
+            {
+                <img @key="movie.Id"
+                     class="@(this.IsLargeLow ? "Row-poster-large" : "")"
+                     src="@(this.IsLargeLow ? movie.PsoterPath : movie.BackdropPath)"
+                     alt="@(movie.Name)"
+                />
+            }
+        }
+        else
+        {
+            <p>Loading...</p>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public MovieCategory MovieCategory { get; set; }
+
+    [Parameter]
+    public bool IsLargeLow { get; set; }
+
+    private MovieEntity[] movies;
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.movies = await this.Http.GetFromJsonAsync<MovieEntity[]>($"api/movies/{MovieCategory}");
+    }
+}

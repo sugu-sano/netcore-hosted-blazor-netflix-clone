@@ -1,7 +1,10 @@
 ﻿@page "/"
+@using NetCoreHostedBlazorNetflixClone.Shared.Domain.Models.Movie
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+<Row Title="NETFLIX ORIGUINALS" MovieCategory="MovieCategory.NetflixOriginals" IsLargeLow="true"></Row>
+<Row Title="Top Rated" MovieCategory="MovieCategory.TopRated" IsLargeLow="true"></Row>
+<Row Title="Action Movies" MovieCategory="MovieCategory.ActionMovies" IsLargeLow="true"></Row>
+<Row Title="Comedy Movies" MovieCategory="MovieCategory.ComedyMovies" IsLargeLow="true"></Row>
+<Row Title="Horror Movies" MovieCategory="MovieCategory.HorrorMovies" IsLargeLow="true"></Row>
+<Row Title="Romance Movies" MovieCategory="MovieCategory.RomanceMovies" IsLargeLow="true"></Row>
+<Row Title="Documentaries" MovieCategory="MovieCategory.DocumentMovies" IsLargeLow="true"></Row>

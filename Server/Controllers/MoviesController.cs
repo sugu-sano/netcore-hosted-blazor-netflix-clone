@@ -25,7 +25,7 @@ namespace NetCoreHostedBlazorNetflixClone.Server.Controllers
                 return this.RedirectToAction(nameof(Get), new { category = MovieCategory.Trending });
             }
 
-            if (!Enum.IsDefined<MovieCategory>(category.Value))
+            if (!Enum.IsDefined(category.Value))
             {
                 return this.StatusCode(StatusCodes.Status404NotFound);
             }

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.808.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreHostedBlazorNetflixClone.Server", "Server\NetCoreHostedBlazorNetflixClone.Server.csproj", "{82388BC8-E19E-4D9C-A143-C1B862C80D7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreHostedBlazorNetflixClone.Server", "Server\NetCoreHostedBlazorNetflixClone.Server.csproj", "{82388BC8-E19E-4D9C-A143-C1B862C80D7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreHostedBlazorNetflixClone.Client", "Client\NetCoreHostedBlazorNetflixClone.Client.csproj", "{5E6612E5-AF71-4071-9D7D-5718143D7D81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreHostedBlazorNetflixClone.Client", "Client\NetCoreHostedBlazorNetflixClone.Client.csproj", "{5E6612E5-AF71-4071-9D7D-5718143D7D81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreHostedBlazorNetflixClone.Shared", "Shared\NetCoreHostedBlazorNetflixClone.Shared.csproj", "{E361D8D1-4F62-40F8-8D6E-399DDE9BEB51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreHostedBlazorNetflixClone.Shared", "Shared\NetCoreHostedBlazorNetflixClone.Shared.csproj", "{E361D8D1-4F62-40F8-8D6E-399DDE9BEB51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
