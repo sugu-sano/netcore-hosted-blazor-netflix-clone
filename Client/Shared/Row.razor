@@ -10,10 +10,9 @@
             foreach (MovieEntity movie in this.movies)
             {
                 <img @key="movie.Id"
-                     class="@(this.IsLargeLow ? "Row-poster-large" : "")"
+                     class="@($"Row-poster {(this.IsLargeLow ? "Row-poster-large" : "")}")"
                      src="@(this.IsLargeLow ? movie.PsoterPath : movie.BackdropPath)"
-                     alt="@(movie.Name)"
-                />
+                     alt="@(movie.Name)" />
             }
         }
         else
@@ -31,7 +30,7 @@
     public MovieCategory MovieCategory { get; set; }
 
     [Parameter]
-    public bool IsLargeLow { get; set; }
+    public bool IsLargeLow { get; set; } = false;
 
     private MovieEntity[] movies;
 

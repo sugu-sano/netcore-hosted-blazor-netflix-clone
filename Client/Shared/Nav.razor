@@ -1,6 +1,7 @@
 ﻿@inject IJSRuntime JS
 
-<div class="@(myClass)" @onscroll="OnScroll">
+
+<div class="Nav" @ref="this.navElementReference">
     <img c="Nav-logo"
          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1920px-Netflix_2015_logo.svg.png"
          alt="Netflix Logo" />
@@ -10,17 +11,13 @@
 </div>
 
 @code {
-    string myClass = "Nav";
+    ElementReference navElementReference;
 
-    public string @class { get; set; }
-
-    bool IsShow = false;
-
-    async Task OnScroll(EventArgs _)
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        System.Console.WriteLine("scrolled");
-        int windowScrollY = await this.JS.InvokeAsync<int>("GetScrollY");
-
-        this.IsShow = windowScrollY > 100;
+        if (firstRender)
+        {
+            await this.JS.InvokeVoidAsync("addScrollEvent", navElementReference);
+        }
     }
 }

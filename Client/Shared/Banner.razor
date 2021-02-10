@@ -8,14 +8,14 @@
 else
 {
     <header class="Banner"
-            style='background-size:cover; background-image: url(@(this.movie.BackdropPath)); background-position: center center;'>
+            style='background-size: cover; background-image: url("@(this.movie.BackdropPath)"); background-position: center center;'>
         <div class="Banner-contents">
             <h1 class="banner-title">
                 @(this.BannerTitle)
             </h1>
             <div class="Banner-buttons">
-                <button class="Banner-button">Play</button>
-                <button class="Banner-button">My List</button>
+                <button type="button" class="Banner-button">Play</button>
+                <button type="button" class="Banner-button">My List</button>
             </div>
 
             <h1 class="Banner-description">@(this.Description)</h1>
