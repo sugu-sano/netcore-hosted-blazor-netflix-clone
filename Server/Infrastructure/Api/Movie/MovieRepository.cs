@@ -72,7 +72,7 @@ namespace NetCoreHostedBlazorNetflixClone.Server.Infrastructure.Api.Movie
         private static void SetImageBasePath(MovieEntity movie)
         {
             movie.BackdropPath = new Uri(imageBaseUri, "/t/p/original" + movie.BackdropPath).ToString();
-            movie.PsoterPath = new Uri(imageBaseUri, "/t/p/original" + movie.PsoterPath).ToString();
+            movie.PosterPath = new Uri(imageBaseUri, "/t/p/original" + movie.PosterPath).ToString();
         }
     }
 }

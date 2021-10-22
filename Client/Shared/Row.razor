@@ -11,7 +11,7 @@
             {
                 <img @key="movie.Id"
                      class="@($"Row-poster {(this.IsLargeLow ? "Row-poster-large" : "")}")"
-                     src="@(this.IsLargeLow ? movie.PsoterPath : movie.BackdropPath)"
+                     src="@(this.IsLargeLow ? movie.PosterPath : movie.BackdropPath)"
                      alt="@(movie.Name)" />
             }
         }
